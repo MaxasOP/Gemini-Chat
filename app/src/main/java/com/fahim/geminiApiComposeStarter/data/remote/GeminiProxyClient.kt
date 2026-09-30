@@ -1,4 +1,4 @@
-package com.example.geministarter.data.remote
+package com.fahim.geminiApiComposeStarter.data.remote
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

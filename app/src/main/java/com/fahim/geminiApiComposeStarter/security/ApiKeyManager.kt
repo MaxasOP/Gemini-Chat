@@ -1,4 +1,4 @@
-package com.example.geministarter.security
+package com.fahim.geminiApiComposeStarter.security
 
 import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
@@ -8,7 +8,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.example.geministarter.BuildConfig
+import com.fahim.geminiApiComposeStarter.BuildConfig
 import kotlinx.coroutines.flow.first
 import java.security.KeyStore
 import javax.crypto.Cipher

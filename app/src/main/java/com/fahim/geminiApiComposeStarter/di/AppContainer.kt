@@ -1,17 +1,17 @@
-package com.example.geministarter.di
+package com.fahim.geminiApiComposeStarter.di
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.example.geministarter.BuildConfig
-import com.example.geministarter.data.GeminiRepository
-import com.example.geministarter.data.local.AppDatabase
-import com.example.geministarter.data.prefs.UserPreferencesRepository
-import com.example.geministarter.data.remote.GeminiProxyClient
-import com.example.geministarter.data.remote.OkHttpGeminiProxyClient
-import com.example.geministarter.security.ApiKeyManager
-import com.example.geministarter.ui.chat.ChatViewModel
+import com.fahim.geminiApiComposeStarter.BuildConfig
+import com.fahim.geminiApiComposeStarter.data.GeminiRepository
+import com.fahim.geminiApiComposeStarter.data.local.AppDatabase
+import com.fahim.geminiApiComposeStarter.data.prefs.UserPreferencesRepository
+import com.fahim.geminiApiComposeStarter.data.remote.GeminiProxyClient
+import com.fahim.geminiApiComposeStarter.data.remote.OkHttpGeminiProxyClient
+import com.fahim.geminiApiComposeStarter.security.ApiKeyManager
+import com.fahim.geminiApiComposeStarter.ui.chat.ChatViewModel
 
 /**
  * Small, dependency-free composition root. A real project would reach for
@@ -30,7 +30,7 @@ class AppContainer(context: Context) {
         OkHttpGeminiProxyClient(BuildConfig.GEMINI_PROXY_URL)
     }
     val geminiRepository: GeminiRepository by lazy {
-        GeminiRepository(
+        com.fahim.geminiApiComposeStarter.data.GeminiRepositoryImpl(
             chatDao = database.chatDao(),
             apiKeyManager = apiKeyManager,
             proxyClient = geminiProxyClient
@@ -42,6 +42,10 @@ class ChatViewModelFactory(private val container: AppContainer) : ViewModelProvi
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
         require(modelClass.isAssignableFrom(ChatViewModel::class.java))
-        return ChatViewModel(container.geminiRepository) as T
+        return ChatViewModel(
+            container.geminiRepository,
+            container.userPreferencesRepository,
+            BuildConfig.GEMINI_API_KEY.isNotBlank()
+        ) as T
     }
 }

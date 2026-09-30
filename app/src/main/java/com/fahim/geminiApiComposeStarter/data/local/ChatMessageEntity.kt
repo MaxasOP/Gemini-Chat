@@ -1,4 +1,4 @@
-package com.example.geministarter.data.local
+package com.fahim.geminiApiComposeStarter.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

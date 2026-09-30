@@ -31,11 +31,11 @@ val geminiProxyUrl: String =
         ?: "https://generativelanguage.googleapis.com/v1beta"
 
 android {
-    namespace = "com.example.geministarter"
+    namespace = "com.fahim.geminiApiComposeStarter"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.geministarter"
+        applicationId = "com.fahim.geminiApiComposeStarter"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -105,11 +105,12 @@ dependencies {
     // --- Gemini Proxy & Networking Client ---
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.google.generativeai)
 
     // --- Persistence: chat history (Room) ---
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.8.5")
+    implementation("androidx.room:room-ktx:2.8.5")
+    ksp("androidx.room:room-compiler:2.8.5")
 
     // --- Persistence: preferences + encrypted key ciphertext (DataStore) ---
     implementation("androidx.datastore:datastore-preferences:1.1.1")

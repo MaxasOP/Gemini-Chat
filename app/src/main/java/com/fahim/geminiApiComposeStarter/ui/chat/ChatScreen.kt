@@ -1,4 +1,4 @@
-package com.example.geministarter.ui.chat
+package com.fahim.geminiApiComposeStarter.ui.chat
 
 import android.app.Activity
 import android.content.Intent
@@ -66,6 +66,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -78,13 +79,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.geministarter.R
-import com.example.geministarter.data.ChatMessage
-import com.example.geministarter.data.prefs.ThemeMode
-import com.example.geministarter.ui.theme.ModelBubbleDark
-import com.example.geministarter.ui.theme.ModelBubbleLight
-import com.example.geministarter.ui.theme.UserBubbleDark
-import com.example.geministarter.ui.theme.UserBubbleLight
+import com.fahim.geminiApiComposeStarter.R
+import com.fahim.geminiApiComposeStarter.data.ChatMessage
+import com.fahim.geminiApiComposeStarter.data.prefs.ThemeMode
+import com.fahim.geminiApiComposeStarter.ui.theme.ModelBubbleDark
+import com.fahim.geminiApiComposeStarter.ui.theme.ModelBubbleLight
+import com.fahim.geminiApiComposeStarter.ui.theme.UserBubbleDark
+import com.fahim.geminiApiComposeStarter.ui.theme.UserBubbleLight
 import kotlinx.coroutines.launch
 import java.util.Locale
 
@@ -210,7 +211,7 @@ fun ChatScreen(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
-                            painter = painterResource(id = R.drawable.ic_gemini_sparkle),
+                            imageVector = Icons.Filled.AutoAwesome,
                             contentDescription = "Gemini",
                             tint = Color.Unspecified,
                             modifier = Modifier.size(24.dp)
@@ -423,7 +424,7 @@ private fun EmptyChatStartView(
             modifier = Modifier.fillMaxWidth()
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.ic_gemini_sparkle),
+                imageVector = Icons.Filled.AutoAwesome,
                 contentDescription = "Gemini",
                 tint = Color.Unspecified,
                 modifier = Modifier.size(if (isCompactWidth) 30.dp else 36.dp)

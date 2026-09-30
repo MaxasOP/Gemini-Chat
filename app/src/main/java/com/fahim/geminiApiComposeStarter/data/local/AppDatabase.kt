@@ -1,4 +1,4 @@
-package com.example.geministarter.data.local
+package com.fahim.geminiApiComposeStarter.data.local
 
 import android.content.Context
 import androidx.room.Database

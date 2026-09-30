@@ -1,4 +1,4 @@
-package com.example.geministarter
+package com.fahim.geminiApiComposeStarter
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,12 +9,12 @@ import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSiz
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.geministarter.data.prefs.ThemeMode
-import com.example.geministarter.di.AppContainer
-import com.example.geministarter.di.ChatViewModelFactory
-import com.example.geministarter.ui.chat.ChatScreen
-import com.example.geministarter.ui.chat.ChatViewModel
-import com.example.geministarter.ui.theme.GeminiStarterTheme
+import com.fahim.geminiApiComposeStarter.data.prefs.ThemeMode
+import com.fahim.geminiApiComposeStarter.di.AppContainer
+import com.fahim.geminiApiComposeStarter.di.ChatViewModelFactory
+import com.fahim.geminiApiComposeStarter.ui.chat.ChatScreen
+import com.fahim.geminiApiComposeStarter.ui.chat.ChatViewModel
+import com.fahim.geminiApiComposeStarter.ui.theme.GeminiStarterTheme
 
 class MainActivity : ComponentActivity() {
 
